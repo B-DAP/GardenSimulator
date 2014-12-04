@@ -24,6 +24,14 @@ using namespace std;
 const int size = 50;//How large is our garden going to be
 float floorDim[] = {size,1,size};
 
+//Menu variables
+int mainMenu;
+int toolMenu;
+int flowerMenu;
+int bushMenu;
+int treeMenu;
+int vegetableMenu;
+
 //Adventure Mode variables
 float aAngle = 0.0f;
 float aLookX = sin(aAngle);
@@ -120,6 +128,96 @@ void keyboard(unsigned char key, int x, int y)
     }
 }
 
+void processMainMenu(int value){
+	if(value == 1){
+		printf("First item was clicked\n");
+	}
+	if(value == 2){
+		printf("Second item was clicked\n");
+	}
+}
+
+void processToolMenu(int value){
+	int menuNum = 0;
+	if(value == 1){ //select shovel
+		printf("First item was clicked\n");
+	}
+	if(value == 2){ //select watering can
+		printf("Second item was clicked\n");
+	}
+	if(value == 3){ //select axe
+		printf("Third item was clicked\n");
+	}
+	if(value == 4){ //select pesticide
+		printf("Fourth item was clicked\n");
+	}
+}
+
+void processFlowerMenu(int value){
+	int menuNum = 1;
+	if(value == 1){
+		printf("First item was clicked\n");
+	}
+}
+
+void processBushMenu(int value){
+	int menuNum = 2;
+	if(value == 1){
+		printf("First item was clicked\n");
+	}
+}
+
+void processTreeMenu(int value){
+	int menuNum = 3;
+	if(value == 1){
+		printf("First item was clicked\n");
+	}
+}
+
+void processVegetableMenu(int value){
+	int menuNum = 4;
+	if(value == 1){
+		printf("First item was clicked\n");
+	}
+}
+
+void createMenu(){
+	//Initialize Inventory
+	
+	//Menu for tools
+	toolMenu = glutCreateMenu(processToolMenu);
+	glutAddMenuEntry("Shovel", 1);
+	glutAddMenuEntry("Watering Can", 2);
+	glutAddMenuEntry("Axe", 3);
+	glutAddMenuEntry("Pesticide", 4);
+	
+	//Menu for flowers
+	flowerMenu = glutCreateMenu(processFlowerMenu);
+	glutAddMenuEntry("Sunflower", 1);
+	
+	//Menu for bushes
+	bushMenu = glutCreateMenu(processBushMenu);
+	glutAddMenuEntry("Alder", 1);
+	
+	//Menu for trees
+	treeMenu = glutCreateMenu(processTreeMenu);
+	glutAddMenuEntry("Evergreen", 1);
+	
+	//Menu for vegetables
+	vegetableMenu = glutCreateMenu(processVegetableMenu);
+	glutAddMenuEntry("Carrots", 1);
+	
+	mainMenu = glutCreateMenu(processMainMenu);
+	glutAddSubMenu("Tools", toolMenu);
+	glutAddSubMenu("Flowers", flowerMenu);
+	glutAddSubMenu("Bushes", bushMenu);
+	glutAddSubMenu("Trees", treeMenu);
+	glutAddSubMenu("Vegetables", vegetableMenu);
+	
+	glutAttachMenu(GLUT_RIGHT_BUTTON);
+	
+}
+
 void init(void)
 {
     //initalizes all plant blocks
@@ -165,6 +263,8 @@ void init(void)
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     gluPerspective(45, 1, 1, 600);
+	
+	createMenu(); //creates inventory menu
 }
 
 void display(void)
