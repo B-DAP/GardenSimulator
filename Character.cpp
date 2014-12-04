@@ -1,4 +1,10 @@
 #include "Character.h"
+#include <iostream>
+#include <stdio.h>
+
+
+
+using namespace std;
 
 //Pokemon constructor
 Character::Character(float* inPos)
@@ -13,7 +19,7 @@ Character::Character(float* inPos)
 	charColour[2] = 0;
 
 	//load the character's point structure
-	loadCharacter();
+	//loadCharacter();
 }
 
 Character::~Character()
@@ -80,6 +86,7 @@ void Character::draw(float cAngle)
 */
 bool Character::loadCharacter()
 {
+	
 	//object loader code
 	const char * fp;
 	fp = "./Objects/Pikachu.obj";
@@ -91,6 +98,7 @@ bool Character::loadCharacter()
 		
 	//Open OBJ file
 	FILE * file = fopen(fp, "r");
+	
 	if(file == NULL)
 	{
 		printf("ERROR OPENING FILE\n");
