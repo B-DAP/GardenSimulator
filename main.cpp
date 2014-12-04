@@ -169,7 +169,7 @@ void init(void)
 
 void display(void)
 {
-    glClearColor(skyColor[0], skyColor[1], skyColor[2], 1);
+    glClearColor(skyColor[0]/255, skyColor[1]/255, skyColor[2]/255, 1);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
@@ -230,13 +230,13 @@ void display(void)
 void timer(int value)
 {
     timeOfDay += 1;
-    if (timeOfDay < 500) {
+   if (timeOfDay < 500) {
         skyColor[0] += (116/500.0);
         skyColor[1] += (165/500.0);
-        skyColor[2] += (255/500.0);
+       skyColor[2] += (255/500.0);
         
-    } else {
-        skyColor[0] -= (151/500.0);
+   } else {
+       skyColor[0] -= (151/500.0);
         skyColor[1] -= (124/500.0);
         skyColor[2] -= (116/500.0);
     }
