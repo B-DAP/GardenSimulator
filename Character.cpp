@@ -1,7 +1,16 @@
 #include "Character.h"
+<<<<<<< HEAD
 
 
 #define PI 3.14159265
+=======
+#include <iostream>
+#include <stdio.h>
+
+
+
+using namespace std;
+>>>>>>> 0fa7d48787e479e5d759339baae72fcb672ad3be
 
 //Pokemon constructor
 Character::Character(float* inPos)
@@ -16,7 +25,11 @@ Character::Character(float* inPos)
 	charColour[2] = 0;
 
 	//load the character's point structure
+<<<<<<< HEAD
 	loadCharacter();
+=======
+	//loadCharacter();
+>>>>>>> 0fa7d48787e479e5d759339baae72fcb672ad3be
 }
 
 Character::~Character()
@@ -25,6 +38,7 @@ Character::~Character()
 	normals_List.clear();
 }
 
+<<<<<<< HEAD
 void Character::move(float* newPos, float mapSize)
 {
 	//update the Characters position as long as the movement does not move the character off the map
@@ -36,6 +50,13 @@ void Character::move(float* newPos, float mapSize)
 	{
 		pos[2] = newPos[2];
 	}
+=======
+void Character::move(float* newPos)
+{
+	//update the Characters position
+	pos[0] = newPos[0];
+	pos[2] = newPos[2];
+>>>>>>> 0fa7d48787e479e5d759339baae72fcb672ad3be
 }
 
 void Character::draw(float cAngle)
@@ -45,11 +66,37 @@ void Character::draw(float cAngle)
 	glColor3f(charColour[0],charColour[1],charColour[2]);
 	
 	glPushMatrix();{
+<<<<<<< HEAD
 		glTranslatef(pos[0],pos[1],pos[2]);
 		glScalef(1.5*scale, 1.5*scale, 1.5*scale);
 
 		//Rotate the Character so they are facing the correct direction
 		glRotatef(-cAngle + 90,0,1,0);
+=======
+		//glTranslatef(pos[0],pos[1],pos[2]);
+		glScalef(1.5*scale, 1.5*scale, 1.5*scale);
+
+
+/*
+
+			case GLUT_KEY_LEFT :
+				aAngle -= 0.05f;
+				aLookX = sin(aAngle);
+				aLookZ = -cos(aAngle);
+				break;
+			case GLUT_KEY_RIGHT :
+				aAngle += 0.05f;
+				aLookX = sin(aAngle);
+				aLookZ = -cos(aAngle);
+				break;
+*/
+
+
+
+
+		//Rotate the Character so they are facing the correct direction
+		//glRotatef(180*-cos(-cAngle) + 180*sin(-cAngle) ,0,1,0);
+>>>>>>> 0fa7d48787e479e5d759339baae72fcb672ad3be
 
 		//Go through the verices list drawing every triangle of the Character
 		for(int idx = 0; idx < vertices_List.size()/3; idx++)
@@ -71,6 +118,10 @@ void Character::draw(float cAngle)
 */
 bool Character::loadCharacter()
 {
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 0fa7d48787e479e5d759339baae72fcb672ad3be
 	//object loader code
 	const char * fp;
 	fp = "./Objects/Pikachu.obj";
@@ -82,6 +133,10 @@ bool Character::loadCharacter()
 		
 	//Open OBJ file
 	FILE * file = fopen(fp, "r");
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 0fa7d48787e479e5d759339baae72fcb672ad3be
 	if(file == NULL)
 	{
 		printf("ERROR OPENING FILE\n");

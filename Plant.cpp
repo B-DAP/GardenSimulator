@@ -40,11 +40,16 @@ void Plant::grow()//growing increases the plants age, which increases it's size
 		age++;
 	}
 }
+<<<<<<< HEAD
 void Plant::draw(Weather::Type forecast)//draw the plant
+=======
+void Plant::draw()//draw the plant
+>>>>>>> 0fa7d48787e479e5d759339baae72fcb672ad3be
 {
 	//draw grass if the ground has not been tilled
 	if(pType == Grass)
 	{
+<<<<<<< HEAD
 		if(forecast == Weather::Snow){glColor3f(0.1,0.15,0.1);}//draw snow on the ground
 		else{glColor3f(0,0.1,0);}
 	}	
@@ -52,6 +57,14 @@ void Plant::draw(Weather::Type forecast)//draw the plant
 	{
 		if(forecast == Weather::Snow){glColor3f(.15,.1,0.05);}//draw snow on the ground
 		else{glColor3f(0.1,0.05,0);}
+=======
+		glColor3f(0,0.1,0);
+	}	
+	else
+	{
+		//draw the dirt
+		glColor3f(0.1,0.05,0);
+>>>>>>> 0fa7d48787e479e5d759339baae72fcb672ad3be
 	}
 	
 	glPushMatrix();{
@@ -72,8 +85,11 @@ void Plant::draw(Weather::Type forecast)//draw the plant
 		}
 	}glPopMatrix();
 }
+<<<<<<< HEAD
 
 Plant::Type Plant::getType()
 {
 	return pType;
 }
+=======
+>>>>>>> 0fa7d48787e479e5d759339baae72fcb672ad3be
