@@ -1,12 +1,11 @@
 #ifndef Character_H
 #define Character_H
 
-<<<<<<< HEAD
 #include <GL/glut.h>
 #include <list>
 #include <stdlib.h>
 #include <stdio.h>
-=======
+
 #ifdef __APPLE__
 #  include <OpenGL/gl.h>
 #  include <OpenGL/glu.h>
@@ -17,7 +16,6 @@
 #  include <GL/freeglut.h>
 #endif
 
->>>>>>> 0fa7d48787e479e5d759339baae72fcb672ad3be
 #include <math.h>    //allows use of sin and cos
 #include <string>		//allows use of strings
 #include <vector>		//allows use of vectors
@@ -50,11 +48,8 @@ public:
 	//deconstructor
 	~Character();
 
-<<<<<<< HEAD
 	void move(float* newPos, float mapSize);
-=======
 	void move(float* newPos);
->>>>>>> 0fa7d48787e479e5d759339baae72fcb672ad3be
 	void draw(float cAngle);
 	
 	float* getPos();	
